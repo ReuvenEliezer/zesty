@@ -9,21 +9,25 @@ import com.amazonaws.services.ec2.model.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.xml.crypto.Data;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.ZoneOffset;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 @Component
 public class InstanceServiceImpl implements InstanceService {
@@ -31,44 +35,67 @@ public class InstanceServiceImpl implements InstanceService {
     private static final Logger logger = LogManager.getLogger(InstanceServiceImpl.class);
 
     private static final String regionsFilePath = "src/main/resources/regions.txt";
-    private static final String instancesResultFilePath = "src/main/resources/regions.json";
+    private static final String instancesResultFilePath = "src/main/resources/<region>.json";
 
+
+    private Map<Regions, List<Instance>> instancesToRegionMap = new ConcurrentHashMap<>();
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @Override
     public void start() {
-        String data = getRegion();
-        if (data == null) {
+
+        String[] regionArr = getRegions();
+        if (regionArr == null || regionArr.length == 0) {
             throw new IllegalArgumentException("region not valid");
         }
 
         /**
          * https://docs.aws.amazon.com/code-samples/latest/catalog/java-ec2-src-main-java-aws-example-ec2-DescribeInstances.java.html
          */
-        final AmazonEC2 amazonEC2 = buildDefaultEc2(data);
+        for (String region : regionArr) {
+            final AmazonEC2 amazonEC2 = buildDefaultEc2(region);
+            List<Instance> allInstances = getAllInstances(amazonEC2);
+            writeSortedInstancesByLaunchTimeToFile(allInstances, region);
+        }
 
-        List<Instance> allInstances = getAllInstances(amazonEC2);
-        writeSortedInstancesByLaunchTimeToFile(allInstances);
     }
 
-    private void writeSortedInstancesByLaunchTimeToFile(List<Instance> allInstances) {
+    @Override
+    public List<Instance> getSortedInstanceByLunchTime(Regions region) {
+        if (!instancesToRegionMap.containsKey(region)) {
+            start();
+        }
+        return instancesToRegionMap.get(region);
+//        try {
+//            return objectMapper.readValue(instancesResultFilePath.replace("<region>", region.getName()), List.class);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+    }
+
+    private void writeSortedInstancesByLaunchTimeToFile(List<Instance> allInstances, String region) {
         Collections.sort(allInstances, Comparator.comparing(Instance::getLaunchTime));
+        instancesToRegionMap.put(Regions.fromName(region), allInstances);
+
         StringBuilder sb = new StringBuilder("[");
 
-        for (Instance instance : allInstances) {
+        for (int i = 0; i < allInstances.size(); i++) {
             try {
-                String jsonInstance = objectMapper.writeValueAsString(instance);
-                sb.append(jsonInstance)
-                        .append(",");
+                String jsonInstance = objectMapper.writeValueAsString(allInstances.get(i));
+                sb.append(jsonInstance);
+                if (i < allInstances.size() - 1) {
+                    sb.append(",");
+                }
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
         }
         sb.append("]");
         try {
-            Files.write(Paths.get(instancesResultFilePath), sb.toString().getBytes());
+            Files.write(Paths.get(instancesResultFilePath.replace("<region>", region)), sb.toString().getBytes());
         } catch (IOException e) {
             //TODO add error log
             e.printStackTrace();
@@ -76,6 +103,7 @@ public class InstanceServiceImpl implements InstanceService {
     }
 
     private List<Instance> getAllInstances(AmazonEC2 amazonEC2) {
+        Date now = new Date(System.currentTimeMillis());
         List<Instance> instanceList = new ArrayList<>();
         boolean done = false;
         DescribeInstancesRequest request = new DescribeInstancesRequest();
@@ -97,6 +125,9 @@ public class InstanceServiceImpl implements InstanceService {
                             instance.getMonitoring().getState(),
                             instance.getLaunchTime());
                     instanceList.add(instance);
+
+                    int diffInDays = (int) ((now.getTime() - instance.getLaunchTime().getTime()) / (1000 * 60 * 60 * 24));
+                    logger.info("total days since instance was launched: {}", diffInDays);
                 }
             }
             request.setNextToken(response.getNextToken());
@@ -108,11 +139,12 @@ public class InstanceServiceImpl implements InstanceService {
         return instanceList;
     }
 
-    private String getRegion() {
+    private String[] getRegions() {
         try {
             FileInputStream fis = new FileInputStream(regionsFilePath);
-            return IOUtils.toString(fis, StandardCharsets.UTF_8)
-                    .trim();
+            String[] split = IOUtils.toString(fis, StandardCharsets.UTF_8)
+                    .split(",");
+            return StringUtils.stripAll(split);
         } catch (FileNotFoundException e) {
             //TODO add error log
             e.printStackTrace();
