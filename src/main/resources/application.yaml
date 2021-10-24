@@ -1,0 +1,8 @@
+info:
+  app:
+    name: @project.artifactId@
+    version: @project.version@
+spring:
+  output:
+    ansi:
+      enabled: always
