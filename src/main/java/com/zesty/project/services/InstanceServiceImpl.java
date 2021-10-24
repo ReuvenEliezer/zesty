@@ -51,21 +51,25 @@ public class InstanceServiceImpl implements InstanceService {
             throw new IllegalArgumentException("region not valid");
         }
 
+        for (String region : regionArr) {
+            getInstances(Regions.fromName(region));
+        }
+
+    }
+
+    private List<Instance> getInstances(Regions region) {
         /**
          * https://docs.aws.amazon.com/code-samples/latest/catalog/java-ec2-src-main-java-aws-example-ec2-DescribeInstances.java.html
          */
-        for (String region : regionArr) {
-            final AmazonEC2 amazonEC2 = buildDefaultEc2(region);
-            List<Instance> allInstances = getAllInstances(amazonEC2);
-            writeSortedInstancesByLaunchTimeToFile(allInstances, region);
-        }
-
+        final AmazonEC2 amazonEC2 = buildDefaultEc2(region);
+        List<Instance> allInstances = getAllInstances(amazonEC2);
+        return writeSortedInstancesByLaunchTimeToFile(allInstances, region);
     }
 
     @Override
     public List<Instance> getSortedInstanceByLunchTime(Regions region) {
         if (!instancesToRegionMap.containsKey(region)) {
-            start();
+            return getInstances(region);
         }
         return instancesToRegionMap.get(region);
 //        try {
@@ -76,9 +80,8 @@ public class InstanceServiceImpl implements InstanceService {
 //        return null;
     }
 
-    private void writeSortedInstancesByLaunchTimeToFile(List<Instance> allInstances, String region) {
+    private List<Instance> writeSortedInstancesByLaunchTimeToFile(List<Instance> allInstances, Regions region) {
         Collections.sort(allInstances, Comparator.comparing(Instance::getLaunchTime));
-        instancesToRegionMap.put(Regions.fromName(region), allInstances);
 
         StringBuilder sb = new StringBuilder("[");
 
@@ -95,11 +98,13 @@ public class InstanceServiceImpl implements InstanceService {
         }
         sb.append("]");
         try {
-            Files.write(Paths.get(instancesResultFilePath.replace("<region>", region)), sb.toString().getBytes());
+            Files.write(Paths.get(instancesResultFilePath.replace("<region>", region.getName())), sb.toString().getBytes());
         } catch (IOException e) {
             //TODO add error log
             e.printStackTrace();
         }
+        return instancesToRegionMap.put(region, allInstances);
+
     }
 
     private List<Instance> getAllInstances(AmazonEC2 amazonEC2) {
@@ -155,14 +160,14 @@ public class InstanceServiceImpl implements InstanceService {
     }
 
 
-    private static AmazonEC2 buildDefaultEc2(String data) {
+    private static AmazonEC2 buildDefaultEc2(Regions region) {
         AWSCredentialsProvider credentials = new EnvironmentVariableCredentialsProvider();
         if (credentials.getCredentials().getAWSAccessKeyId() == null || credentials.getCredentials().getAWSSecretKey() == null) {
             throw new IllegalArgumentException("please set  System.getenv(\"AWS_ACCESS_KEY_ID\"); System.getenv(\"AWS_SECRET_KEY\"); System.getenv(\"AWS_SESSION_TOKEN\")");
         }
         return AmazonEC2ClientBuilder.standard()
                 .withCredentials(credentials)
-                .withRegion(Regions.fromName(data))
+                .withRegion(region)
                 .build();
     }
 }

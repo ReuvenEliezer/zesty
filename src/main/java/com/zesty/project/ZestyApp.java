@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication()
 @ComponentScan(basePackages = {
         "com.zesty.project.config",
-        "com.zesty.project.repositories",
+//        "com.zesty.project.controllers",
+//        "com.zesty.project.repositories",
         "com.zesty.project.services",
 })
 public class ZestyApp {
