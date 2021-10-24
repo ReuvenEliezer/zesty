@@ -55,15 +55,18 @@ public class InstanceServiceImpl implements InstanceService {
 
     private void writeSortedInstancesByLaunchTimeToFile(List<Instance> allInstances) {
         Collections.sort(allInstances, Comparator.comparing(Instance::getLaunchTime));
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("[");
+
         for (Instance instance : allInstances) {
             try {
                 String jsonInstance = objectMapper.writeValueAsString(instance);
-                sb.append(jsonInstance);
+                sb.append(jsonInstance)
+                        .append(",");
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
         }
+        sb.append("]");
         try {
             Files.write(Paths.get(instancesResultFilePath), sb.toString().getBytes());
         } catch (IOException e) {
