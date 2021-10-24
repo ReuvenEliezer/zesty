@@ -6,9 +6,12 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2ClientBuilder;
 import com.amazonaws.services.ec2.model.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
@@ -30,6 +33,10 @@ public class InstanceServiceImpl implements InstanceService {
     private static final String regionsFilePath = "src/main/resources/regions.txt";
     private static final String instancesResultFilePath = "src/main/resources/regions.json";
 
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Override
     public void start() {
         String data = getRegion();
@@ -50,7 +57,12 @@ public class InstanceServiceImpl implements InstanceService {
         Collections.sort(allInstances, Comparator.comparing(Instance::getLaunchTime));
         StringBuilder sb = new StringBuilder();
         for (Instance instance : allInstances) {
-            sb.append(instance.toString());
+            try {
+                String jsonInstance = objectMapper.writeValueAsString(instance);
+                sb.append(jsonInstance);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
         }
         try {
             Files.write(Paths.get(instancesResultFilePath), sb.toString().getBytes());
