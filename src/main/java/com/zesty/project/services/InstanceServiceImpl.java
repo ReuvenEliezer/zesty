@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.xml.crypto.Data;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -73,11 +74,12 @@ public class InstanceServiceImpl implements InstanceService {
         }
         return instancesToRegionMap.get(region);
 //        try {
-//            return objectMapper.readValue(instancesResultFilePath.replace("<region>", region.getName()), List.class);
+//           return objectMapper.readValue(new File(instancesResultFilePath.replace("<region>", region.getName())), List.class);
 //        } catch (JsonProcessingException e) {
 //            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
 //        }
-//        return null;
     }
 
     private List<Instance> writeSortedInstancesByLaunchTimeToFile(List<Instance> allInstances, Regions region) {
