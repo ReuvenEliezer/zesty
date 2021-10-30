@@ -1,0 +1,149 @@
+[
+  {
+    "amiLaunchIndex": 0,
+    "imageId": "ami-0dc2d3e4c0f9ebd18",
+    "instanceId": "i-0f2c38a599bee5b54",
+    "instanceType": "t2.small",
+    "kernelId": null,
+    "keyName": "rnd",
+    "launchTime": 1626018363000,
+    "monitoring": {
+      "state": "disabled"
+    },
+    "placement": {
+      "availabilityZone": "us-east-1e",
+      "affinity": null,
+      "groupName": "",
+      "partitionNumber": null,
+      "hostId": null,
+      "tenancy": "default",
+      "spreadDomain": null,
+      "hostResourceGroupArn": null
+    },
+    "platform": null,
+    "privateDnsName": "ip-172-31-64-20.ec2.internal",
+    "privateIpAddress": "172.31.64.20",
+    "productCodes": [],
+    "publicDnsName": "",
+    "publicIpAddress": null,
+    "ramdiskId": null,
+    "state": {
+      "code": 80,
+      "name": "stopped"
+    },
+    "stateTransitionReason": "User initiated (2021-07-11 15:46:31 GMT)",
+    "subnetId": "subnet-b4dc988a",
+    "vpcId": "vpc-fb307c81",
+    "architecture": "x86_64",
+    "blockDeviceMappings": [
+      {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+          "attachTime": 1626018365000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-00f1836e1f2f33b17"
+        }
+      }
+    ],
+    "clientToken": "",
+    "ebsOptimized": false,
+    "enaSupport": true,
+    "hypervisor": "xen",
+    "iamInstanceProfile": null,
+    "instanceLifecycle": null,
+    "elasticGpuAssociations": [],
+    "elasticInferenceAcceleratorAssociations": [],
+    "networkInterfaces": [
+      {
+        "association": null,
+        "attachment": {
+          "attachTime": 1626018363000,
+          "attachmentId": "eni-attach-07a7c38a4fe9d86fd",
+          "deleteOnTermination": true,
+          "deviceIndex": 0,
+          "status": "attached",
+          "networkCardIndex": 0
+        },
+        "description": "",
+        "groups": [
+          {
+            "groupName": "default",
+            "groupId": "sg-9d86becc"
+          }
+        ],
+        "ipv6Addresses": [],
+        "macAddress": "06:ed:8b:6f:af:65",
+        "networkInterfaceId": "eni-0e09ea52a9096062f",
+        "ownerId": "577926974532",
+        "privateDnsName": "ip-172-31-64-20.ec2.internal",
+        "privateIpAddress": "172.31.64.20",
+        "privateIpAddresses": [
+          {
+            "association": null,
+            "primary": true,
+            "privateDnsName": "ip-172-31-64-20.ec2.internal",
+            "privateIpAddress": "172.31.64.20"
+          }
+        ],
+        "sourceDestCheck": true,
+        "status": "in-use",
+        "subnetId": "subnet-b4dc988a",
+        "vpcId": "vpc-fb307c81",
+        "interfaceType": "interface",
+        "ipv4Prefixes": [],
+        "ipv6Prefixes": []
+      }
+    ],
+    "outpostArn": null,
+    "rootDeviceName": "/dev/xvda",
+    "rootDeviceType": "ebs",
+    "securityGroups": [
+      {
+        "groupName": "default",
+        "groupId": "sg-9d86becc"
+      }
+    ],
+    "sourceDestCheck": true,
+    "spotInstanceRequestId": null,
+    "sriovNetSupport": null,
+    "stateReason": {
+      "code": "Client.UserInitiatedShutdown",
+      "message": "Client.UserInitiatedShutdown: User initiated shutdown"
+    },
+    "tags": [
+      {
+        "key": "Name",
+        "value": "Test-1"
+      }
+    ],
+    "virtualizationType": "hvm",
+    "cpuOptions": {
+      "coreCount": 1,
+      "threadsPerCore": 1
+    },
+    "capacityReservationId": null,
+    "capacityReservationSpecification": {
+      "capacityReservationPreference": "open",
+      "capacityReservationTarget": null
+    },
+    "hibernationOptions": {
+      "configured": false
+    },
+    "licenses": [],
+    "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "optional",
+      "httpPutResponseHopLimit": 1,
+      "httpEndpoint": "enabled",
+      "httpProtocolIpv6": "disabled"
+    },
+    "enclaveOptions": {
+      "enabled": false
+    },
+    "bootMode": null,
+    "platformDetails": null,
+    "usageOperation": null,
+    "usageOperationUpdateTime": null
+  }
+]

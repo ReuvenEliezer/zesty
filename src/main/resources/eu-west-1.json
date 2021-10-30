@@ -1,0 +1,1132 @@
+[
+  {
+    "amiLaunchIndex": 0,
+    "imageId": "ami-0f89681a05a3a9de7",
+    "instanceId": "i-0177c83fb3b431ec4",
+    "instanceType": "t2.micro",
+    "kernelId": null,
+    "keyName": null,
+    "launchTime": 1625823481000,
+    "monitoring": {
+      "state": "disabled"
+    },
+    "placement": {
+      "availabilityZone": "eu-west-1c",
+      "affinity": null,
+      "groupName": "",
+      "partitionNumber": null,
+      "hostId": null,
+      "tenancy": "default",
+      "spreadDomain": null,
+      "hostResourceGroupArn": null
+    },
+    "platform": null,
+    "privateDnsName": "ip-172-31-32-13.eu-west-1.compute.internal",
+    "privateIpAddress": "172.31.32.13",
+    "productCodes": [],
+    "publicDnsName": "",
+    "publicIpAddress": null,
+    "ramdiskId": null,
+    "state": {
+      "code": 80,
+      "name": "stopped"
+    },
+    "stateTransitionReason": "User initiated (2021-08-13 11:22:37 GMT)",
+    "subnetId": "subnet-43078919",
+    "vpcId": "vpc-bbcedddd",
+    "architecture": "x86_64",
+    "blockDeviceMappings": [
+      {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+          "attachTime": 1625748415000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-0d13d2e7de36f165b"
+        }
+      },
+      {
+        "deviceName": "xvdh",
+        "ebs": {
+          "attachTime": 1626077257000,
+          "deleteOnTermination": false,
+          "status": "attached",
+          "volumeId": "vol-08bb0460fd69ec133"
+        }
+      }
+    ],
+    "clientToken": "",
+    "ebsOptimized": false,
+    "enaSupport": true,
+    "hypervisor": "xen",
+    "iamInstanceProfile": null,
+    "instanceLifecycle": null,
+    "elasticGpuAssociations": [],
+    "elasticInferenceAcceleratorAssociations": [],
+    "networkInterfaces": [
+      {
+        "association": null,
+        "attachment": {
+          "attachTime": 1625748414000,
+          "attachmentId": "eni-attach-0bc8cc5c3a4e875be",
+          "deleteOnTermination": true,
+          "deviceIndex": 0,
+          "status": "attached",
+          "networkCardIndex": 0
+        },
+        "description": "",
+        "groups": [
+          {
+            "groupName": "launch-wizard-3",
+            "groupId": "sg-08cf8261413ef2950"
+          }
+        ],
+        "ipv6Addresses": [],
+        "macAddress": "0a:9c:93:82:b0:1f",
+        "networkInterfaceId": "eni-09441abf2a98f52ea",
+        "ownerId": "577926974532",
+        "privateDnsName": "ip-172-31-32-13.eu-west-1.compute.internal",
+        "privateIpAddress": "172.31.32.13",
+        "privateIpAddresses": [
+          {
+            "association": null,
+            "primary": true,
+            "privateDnsName": "ip-172-31-32-13.eu-west-1.compute.internal",
+            "privateIpAddress": "172.31.32.13"
+          }
+        ],
+        "sourceDestCheck": true,
+        "status": "in-use",
+        "subnetId": "subnet-43078919",
+        "vpcId": "vpc-bbcedddd",
+        "interfaceType": "interface",
+        "ipv4Prefixes": [],
+        "ipv6Prefixes": []
+      }
+    ],
+    "outpostArn": null,
+    "rootDeviceName": "/dev/xvda",
+    "rootDeviceType": "ebs",
+    "securityGroups": [
+      {
+        "groupName": "launch-wizard-3",
+        "groupId": "sg-08cf8261413ef2950"
+      }
+    ],
+    "sourceDestCheck": true,
+    "spotInstanceRequestId": null,
+    "sriovNetSupport": null,
+    "stateReason": {
+      "code": "Client.UserInitiatedShutdown",
+      "message": "Client.UserInitiatedShutdown: User initiated shutdown"
+    },
+    "tags": [],
+    "virtualizationType": "hvm",
+    "cpuOptions": {
+      "coreCount": 1,
+      "threadsPerCore": 1
+    },
+    "capacityReservationId": null,
+    "capacityReservationSpecification": {
+      "capacityReservationPreference": "open",
+      "capacityReservationTarget": null
+    },
+    "hibernationOptions": {
+      "configured": false
+    },
+    "licenses": [],
+    "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "optional",
+      "httpPutResponseHopLimit": 1,
+      "httpEndpoint": "enabled",
+      "httpProtocolIpv6": "disabled"
+    },
+    "enclaveOptions": {
+      "enabled": false
+    },
+    "bootMode": null,
+    "platformDetails": null,
+    "usageOperation": null,
+    "usageOperationUpdateTime": null
+  },
+  {
+    "amiLaunchIndex": 0,
+    "imageId": "ami-02b4e72b17337d6c1",
+    "instanceId": "i-0f2ed254a307e9ae1",
+    "instanceType": "t2.micro",
+    "kernelId": null,
+    "keyName": "rnd",
+    "launchTime": 1627896598000,
+    "monitoring": {
+      "state": "disabled"
+    },
+    "placement": {
+      "availabilityZone": "eu-west-1b",
+      "affinity": null,
+      "groupName": "",
+      "partitionNumber": null,
+      "hostId": null,
+      "tenancy": "default",
+      "spreadDomain": null,
+      "hostResourceGroupArn": null
+    },
+    "platform": null,
+    "privateDnsName": "ip-172-31-27-26.eu-west-1.compute.internal",
+    "privateIpAddress": "172.31.27.26",
+    "productCodes": [],
+    "publicDnsName": "",
+    "publicIpAddress": null,
+    "ramdiskId": null,
+    "state": {
+      "code": 80,
+      "name": "stopped"
+    },
+    "stateTransitionReason": "User initiated (2021-08-13 11:22:37 GMT)",
+    "subnetId": "subnet-68c19d20",
+    "vpcId": "vpc-bbcedddd",
+    "architecture": "x86_64",
+    "blockDeviceMappings": [
+      {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+          "attachTime": 1627896598000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-0d06017d82f4bb665"
+        }
+      },
+      {
+        "deviceName": "/dev/sdb",
+        "ebs": {
+          "attachTime": 1627896598000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-0dc70940ed44cf5fc"
+        }
+      },
+      {
+        "deviceName": "/dev/sdc",
+        "ebs": {
+          "attachTime": 1627896598000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-0474b599feb54c88e"
+        }
+      },
+      {
+        "deviceName": "/dev/sde",
+        "ebs": {
+          "attachTime": 1627896598000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-01a099b9736b2fb90"
+        }
+      },
+      {
+        "deviceName": "/dev/sdd",
+        "ebs": {
+          "attachTime": 1627917156000,
+          "deleteOnTermination": false,
+          "status": "attached",
+          "volumeId": "vol-0aaedcf74adfc0672"
+        }
+      }
+    ],
+    "clientToken": "",
+    "ebsOptimized": false,
+    "enaSupport": true,
+    "hypervisor": "xen",
+    "iamInstanceProfile": null,
+    "instanceLifecycle": null,
+    "elasticGpuAssociations": [],
+    "elasticInferenceAcceleratorAssociations": [],
+    "networkInterfaces": [
+      {
+        "association": null,
+        "attachment": {
+          "attachTime": 1627896598000,
+          "attachmentId": "eni-attach-0bd794dcd346ff2e6",
+          "deleteOnTermination": true,
+          "deviceIndex": 0,
+          "status": "attached",
+          "networkCardIndex": 0
+        },
+        "description": "",
+        "groups": [
+          {
+            "groupName": "default",
+            "groupId": "sg-c0b43bb6"
+          }
+        ],
+        "ipv6Addresses": [],
+        "macAddress": "06:01:c0:c9:80:8f",
+        "networkInterfaceId": "eni-0695b3b7bc61f48a6",
+        "ownerId": "577926974532",
+        "privateDnsName": "ip-172-31-27-26.eu-west-1.compute.internal",
+        "privateIpAddress": "172.31.27.26",
+        "privateIpAddresses": [
+          {
+            "association": null,
+            "primary": true,
+            "privateDnsName": "ip-172-31-27-26.eu-west-1.compute.internal",
+            "privateIpAddress": "172.31.27.26"
+          }
+        ],
+        "sourceDestCheck": true,
+        "status": "in-use",
+        "subnetId": "subnet-68c19d20",
+        "vpcId": "vpc-bbcedddd",
+        "interfaceType": "interface",
+        "ipv4Prefixes": [],
+        "ipv6Prefixes": []
+      }
+    ],
+    "outpostArn": null,
+    "rootDeviceName": "/dev/xvda",
+    "rootDeviceType": "ebs",
+    "securityGroups": [
+      {
+        "groupName": "default",
+        "groupId": "sg-c0b43bb6"
+      }
+    ],
+    "sourceDestCheck": true,
+    "spotInstanceRequestId": null,
+    "sriovNetSupport": null,
+    "stateReason": {
+      "code": "Client.UserInitiatedShutdown",
+      "message": "Client.UserInitiatedShutdown: User initiated shutdown"
+    },
+    "tags": [
+      {
+        "key": "Name",
+        "value": "Volume-snapshot-CREATION-test-instance"
+      }
+    ],
+    "virtualizationType": "hvm",
+    "cpuOptions": {
+      "coreCount": 1,
+      "threadsPerCore": 1
+    },
+    "capacityReservationId": null,
+    "capacityReservationSpecification": {
+      "capacityReservationPreference": "open",
+      "capacityReservationTarget": null
+    },
+    "hibernationOptions": {
+      "configured": false
+    },
+    "licenses": [],
+    "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "optional",
+      "httpPutResponseHopLimit": 1,
+      "httpEndpoint": "enabled",
+      "httpProtocolIpv6": "disabled"
+    },
+    "enclaveOptions": {
+      "enabled": false
+    },
+    "bootMode": null,
+    "platformDetails": null,
+    "usageOperation": null,
+    "usageOperationUpdateTime": null
+  },
+  {
+    "amiLaunchIndex": 0,
+    "imageId": "ami-02b4e72b17337d6c1",
+    "instanceId": "i-0a12c170a971f50c4",
+    "instanceType": "t2.micro",
+    "kernelId": null,
+    "keyName": "rnd",
+    "launchTime": 1627904746000,
+    "monitoring": {
+      "state": "disabled"
+    },
+    "placement": {
+      "availabilityZone": "eu-west-1b",
+      "affinity": null,
+      "groupName": "",
+      "partitionNumber": null,
+      "hostId": null,
+      "tenancy": "default",
+      "spreadDomain": null,
+      "hostResourceGroupArn": null
+    },
+    "platform": null,
+    "privateDnsName": "ip-172-31-22-147.eu-west-1.compute.internal",
+    "privateIpAddress": "172.31.22.147",
+    "productCodes": [],
+    "publicDnsName": "",
+    "publicIpAddress": null,
+    "ramdiskId": null,
+    "state": {
+      "code": 80,
+      "name": "stopped"
+    },
+    "stateTransitionReason": "User initiated (2021-08-13 11:22:37 GMT)",
+    "subnetId": "subnet-68c19d20",
+    "vpcId": "vpc-bbcedddd",
+    "architecture": "x86_64",
+    "blockDeviceMappings": [
+      {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+          "attachTime": 1627904747000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-07738fc7c6be3de66"
+        }
+      },
+      {
+        "deviceName": "/dev/sde",
+        "ebs": {
+          "attachTime": 1627906991000,
+          "deleteOnTermination": false,
+          "status": "attached",
+          "volumeId": "vol-04304b40366b5c19f"
+        }
+      },
+      {
+        "deviceName": "/dev/sdc",
+        "ebs": {
+          "attachTime": 1627906992000,
+          "deleteOnTermination": false,
+          "status": "attached",
+          "volumeId": "vol-01c894b9d16c1d4e6"
+        }
+      },
+      {
+        "deviceName": "/dev/sdb",
+        "ebs": {
+          "attachTime": 1627906992000,
+          "deleteOnTermination": false,
+          "status": "attached",
+          "volumeId": "vol-0348f703669c6bb9b"
+        }
+      },
+      {
+        "deviceName": "/dev/sdd",
+        "ebs": {
+          "attachTime": 1627906993000,
+          "deleteOnTermination": false,
+          "status": "attached",
+          "volumeId": "vol-0f8e2aa577156fd69"
+        }
+      }
+    ],
+    "clientToken": "",
+    "ebsOptimized": false,
+    "enaSupport": true,
+    "hypervisor": "xen",
+    "iamInstanceProfile": null,
+    "instanceLifecycle": null,
+    "elasticGpuAssociations": [],
+    "elasticInferenceAcceleratorAssociations": [],
+    "networkInterfaces": [
+      {
+        "association": null,
+        "attachment": {
+          "attachTime": 1627904746000,
+          "attachmentId": "eni-attach-0157ee25d80fa81ae",
+          "deleteOnTermination": true,
+          "deviceIndex": 0,
+          "status": "attached",
+          "networkCardIndex": 0
+        },
+        "description": "Primary network interface",
+        "groups": [
+          {
+            "groupName": "default",
+            "groupId": "sg-c0b43bb6"
+          }
+        ],
+        "ipv6Addresses": [],
+        "macAddress": "06:9f:6a:66:b9:cd",
+        "networkInterfaceId": "eni-0277b08ad9fda4110",
+        "ownerId": "577926974532",
+        "privateDnsName": "ip-172-31-22-147.eu-west-1.compute.internal",
+        "privateIpAddress": "172.31.22.147",
+        "privateIpAddresses": [
+          {
+            "association": null,
+            "primary": true,
+            "privateDnsName": "ip-172-31-22-147.eu-west-1.compute.internal",
+            "privateIpAddress": "172.31.22.147"
+          }
+        ],
+        "sourceDestCheck": true,
+        "status": "in-use",
+        "subnetId": "subnet-68c19d20",
+        "vpcId": "vpc-bbcedddd",
+        "interfaceType": "interface",
+        "ipv4Prefixes": [],
+        "ipv6Prefixes": []
+      }
+    ],
+    "outpostArn": null,
+    "rootDeviceName": "/dev/xvda",
+    "rootDeviceType": "ebs",
+    "securityGroups": [
+      {
+        "groupName": "default",
+        "groupId": "sg-c0b43bb6"
+      }
+    ],
+    "sourceDestCheck": true,
+    "spotInstanceRequestId": null,
+    "sriovNetSupport": null,
+    "stateReason": {
+      "code": "Client.UserInitiatedShutdown",
+      "message": "Client.UserInitiatedShutdown: User initiated shutdown"
+    },
+    "tags": [
+      {
+        "key": "Name",
+        "value": "Volume-snapshot-RECOVERY-test-instance"
+      }
+    ],
+    "virtualizationType": "hvm",
+    "cpuOptions": {
+      "coreCount": 1,
+      "threadsPerCore": 1
+    },
+    "capacityReservationId": null,
+    "capacityReservationSpecification": {
+      "capacityReservationPreference": "open",
+      "capacityReservationTarget": null
+    },
+    "hibernationOptions": {
+      "configured": false
+    },
+    "licenses": [],
+    "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "optional",
+      "httpPutResponseHopLimit": 1,
+      "httpEndpoint": "enabled",
+      "httpProtocolIpv6": "disabled"
+    },
+    "enclaveOptions": {
+      "enabled": false
+    },
+    "bootMode": null,
+    "platformDetails": null,
+    "usageOperation": null,
+    "usageOperationUpdateTime": null
+  },
+  {
+    "amiLaunchIndex": 0,
+    "imageId": "ami-0d1bf5b68307103c2",
+    "instanceId": "i-0539d2cb699072132",
+    "instanceType": "t2.micro",
+    "kernelId": null,
+    "keyName": "pentest",
+    "launchTime": 1633448242000,
+    "monitoring": {
+      "state": "disabled"
+    },
+    "placement": {
+      "availabilityZone": "eu-west-1a",
+      "affinity": null,
+      "groupName": "",
+      "partitionNumber": null,
+      "hostId": null,
+      "tenancy": "default",
+      "spreadDomain": null,
+      "hostResourceGroupArn": null
+    },
+    "platform": null,
+    "privateDnsName": "ip-172-31-0-108.eu-west-1.compute.internal",
+    "privateIpAddress": "172.31.0.108",
+    "productCodes": [],
+    "publicDnsName": "ec2-34-245-228-118.eu-west-1.compute.amazonaws.com",
+    "publicIpAddress": "34.245.228.118",
+    "ramdiskId": null,
+    "state": {
+      "code": 16,
+      "name": "running"
+    },
+    "stateTransitionReason": "",
+    "subnetId": "subnet-b9337fdf",
+    "vpcId": "vpc-bbcedddd",
+    "architecture": "x86_64",
+    "blockDeviceMappings": [
+      {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+          "attachTime": 1633448243000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-0fd12e8d22c4f2b70"
+        }
+      }
+    ],
+    "clientToken": "",
+    "ebsOptimized": false,
+    "enaSupport": true,
+    "hypervisor": "xen",
+    "iamInstanceProfile": {
+      "arn": "arn:aws:iam::577926974532:instance-profile/SSMInstanceProfile",
+      "id": "AIPAYNDZBZRCAQBXEL5S2"
+    },
+    "instanceLifecycle": null,
+    "elasticGpuAssociations": [],
+    "elasticInferenceAcceleratorAssociations": [],
+    "networkInterfaces": [
+      {
+        "association": {
+          "carrierIp": null,
+          "ipOwnerId": "amazon",
+          "publicDnsName": "ec2-34-245-228-118.eu-west-1.compute.amazonaws.com",
+          "publicIp": "34.245.228.118"
+        },
+        "attachment": {
+          "attachTime": 1633448242000,
+          "attachmentId": "eni-attach-0520f5dd9bd435cd7",
+          "deleteOnTermination": true,
+          "deviceIndex": 0,
+          "status": "attached",
+          "networkCardIndex": 0
+        },
+        "description": "",
+        "groups": [
+          {
+            "groupName": "default",
+            "groupId": "sg-c0b43bb6"
+          }
+        ],
+        "ipv6Addresses": [],
+        "macAddress": "02:5e:ff:ea:e7:45",
+        "networkInterfaceId": "eni-0e7df765e3c9e6f61",
+        "ownerId": "577926974532",
+        "privateDnsName": "ip-172-31-0-108.eu-west-1.compute.internal",
+        "privateIpAddress": "172.31.0.108",
+        "privateIpAddresses": [
+          {
+            "association": {
+              "carrierIp": null,
+              "ipOwnerId": "amazon",
+              "publicDnsName": "ec2-34-245-228-118.eu-west-1.compute.amazonaws.com",
+              "publicIp": "34.245.228.118"
+            },
+            "primary": true,
+            "privateDnsName": "ip-172-31-0-108.eu-west-1.compute.internal",
+            "privateIpAddress": "172.31.0.108"
+          }
+        ],
+        "sourceDestCheck": true,
+        "status": "in-use",
+        "subnetId": "subnet-b9337fdf",
+        "vpcId": "vpc-bbcedddd",
+        "interfaceType": "interface",
+        "ipv4Prefixes": [],
+        "ipv6Prefixes": []
+      }
+    ],
+    "outpostArn": null,
+    "rootDeviceName": "/dev/xvda",
+    "rootDeviceType": "ebs",
+    "securityGroups": [
+      {
+        "groupName": "default",
+        "groupId": "sg-c0b43bb6"
+      }
+    ],
+    "sourceDestCheck": true,
+    "spotInstanceRequestId": null,
+    "sriovNetSupport": null,
+    "stateReason": null,
+    "tags": [
+      {
+        "key": "blabalb<script>alert();</script>",
+        "value": "blabalb<script>alert();</script>"
+      },
+      {
+        "key": "Name",
+        "value": "PenTest"
+      }
+    ],
+    "virtualizationType": "hvm",
+    "cpuOptions": {
+      "coreCount": 1,
+      "threadsPerCore": 1
+    },
+    "capacityReservationId": null,
+    "capacityReservationSpecification": {
+      "capacityReservationPreference": "open",
+      "capacityReservationTarget": null
+    },
+    "hibernationOptions": {
+      "configured": false
+    },
+    "licenses": [],
+    "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "optional",
+      "httpPutResponseHopLimit": 1,
+      "httpEndpoint": "enabled",
+      "httpProtocolIpv6": "disabled"
+    },
+    "enclaveOptions": {
+      "enabled": false
+    },
+    "bootMode": null,
+    "platformDetails": null,
+    "usageOperation": null,
+    "usageOperationUpdateTime": null
+  },
+  {
+    "amiLaunchIndex": 0,
+    "imageId": "ami-05cd35b907b4ffe77",
+    "instanceId": "i-06f2573f2b0f6ea99",
+    "instanceType": "t2.micro",
+    "kernelId": null,
+    "keyName": "rnd",
+    "launchTime": 1634641302000,
+    "monitoring": {
+      "state": "disabled"
+    },
+    "placement": {
+      "availabilityZone": "eu-west-1b",
+      "affinity": null,
+      "groupName": "",
+      "partitionNumber": null,
+      "hostId": null,
+      "tenancy": "default",
+      "spreadDomain": null,
+      "hostResourceGroupArn": null
+    },
+    "platform": null,
+    "privateDnsName": "ip-172-31-23-246.eu-west-1.compute.internal",
+    "privateIpAddress": "172.31.23.246",
+    "productCodes": [],
+    "publicDnsName": "ec2-34-254-242-25.eu-west-1.compute.amazonaws.com",
+    "publicIpAddress": "34.254.242.25",
+    "ramdiskId": null,
+    "state": {
+      "code": 16,
+      "name": "running"
+    },
+    "stateTransitionReason": "",
+    "subnetId": "subnet-68c19d20",
+    "vpcId": "vpc-bbcedddd",
+    "architecture": "x86_64",
+    "blockDeviceMappings": [
+      {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+          "attachTime": 1634140940000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-0bcb0bde6ceecaa97"
+        }
+      }
+    ],
+    "clientToken": "",
+    "ebsOptimized": false,
+    "enaSupport": true,
+    "hypervisor": "xen",
+    "iamInstanceProfile": null,
+    "instanceLifecycle": null,
+    "elasticGpuAssociations": [],
+    "elasticInferenceAcceleratorAssociations": [],
+    "networkInterfaces": [
+      {
+        "association": {
+          "carrierIp": null,
+          "ipOwnerId": "amazon",
+          "publicDnsName": "ec2-34-254-242-25.eu-west-1.compute.amazonaws.com",
+          "publicIp": "34.254.242.25"
+        },
+        "attachment": {
+          "attachTime": 1634140939000,
+          "attachmentId": "eni-attach-0d2692d5c27017ff8",
+          "deleteOnTermination": true,
+          "deviceIndex": 0,
+          "status": "attached",
+          "networkCardIndex": 0
+        },
+        "description": "Primary network interface",
+        "groups": [
+          {
+            "groupName": "launch-wizard-6",
+            "groupId": "sg-02e132db09f7af32c"
+          }
+        ],
+        "ipv6Addresses": [],
+        "macAddress": "06:da:d4:d3:20:ed",
+        "networkInterfaceId": "eni-04de2b591efe9b6ee",
+        "ownerId": "577926974532",
+        "privateDnsName": "ip-172-31-23-246.eu-west-1.compute.internal",
+        "privateIpAddress": "172.31.23.246",
+        "privateIpAddresses": [
+          {
+            "association": {
+              "carrierIp": null,
+              "ipOwnerId": "amazon",
+              "publicDnsName": "ec2-34-254-242-25.eu-west-1.compute.amazonaws.com",
+              "publicIp": "34.254.242.25"
+            },
+            "primary": true,
+            "privateDnsName": "ip-172-31-23-246.eu-west-1.compute.internal",
+            "privateIpAddress": "172.31.23.246"
+          }
+        ],
+        "sourceDestCheck": true,
+        "status": "in-use",
+        "subnetId": "subnet-68c19d20",
+        "vpcId": "vpc-bbcedddd",
+        "interfaceType": "interface",
+        "ipv4Prefixes": [],
+        "ipv6Prefixes": []
+      }
+    ],
+    "outpostArn": null,
+    "rootDeviceName": "/dev/xvda",
+    "rootDeviceType": "ebs",
+    "securityGroups": [
+      {
+        "groupName": "launch-wizard-6",
+        "groupId": "sg-02e132db09f7af32c"
+      }
+    ],
+    "sourceDestCheck": true,
+    "spotInstanceRequestId": null,
+    "sriovNetSupport": null,
+    "stateReason": null,
+    "tags": [
+      {
+        "key": "Name",
+        "value": "bastion-blacksite"
+      }
+    ],
+    "virtualizationType": "hvm",
+    "cpuOptions": {
+      "coreCount": 1,
+      "threadsPerCore": 1
+    },
+    "capacityReservationId": null,
+    "capacityReservationSpecification": {
+      "capacityReservationPreference": "open",
+      "capacityReservationTarget": null
+    },
+    "hibernationOptions": {
+      "configured": false
+    },
+    "licenses": [],
+    "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "optional",
+      "httpPutResponseHopLimit": 1,
+      "httpEndpoint": "enabled",
+      "httpProtocolIpv6": "disabled"
+    },
+    "enclaveOptions": {
+      "enabled": false
+    },
+    "bootMode": null,
+    "platformDetails": null,
+    "usageOperation": null,
+    "usageOperationUpdateTime": null
+  },
+  {
+    "amiLaunchIndex": 0,
+    "imageId": "ami-0ebccc241090b4fcf",
+    "instanceId": "i-088061a3ae78e9c1c",
+    "instanceType": "t2.medium",
+    "kernelId": null,
+    "keyName": "rnd",
+    "launchTime": 1634641302000,
+    "monitoring": {
+      "state": "disabled"
+    },
+    "placement": {
+      "availabilityZone": "eu-west-1b",
+      "affinity": null,
+      "groupName": "",
+      "partitionNumber": null,
+      "hostId": null,
+      "tenancy": "default",
+      "spreadDomain": null,
+      "hostResourceGroupArn": null
+    },
+    "platform": null,
+    "privateDnsName": "ip-172-31-48-54.eu-west-1.compute.internal",
+    "privateIpAddress": "172.31.48.54",
+    "productCodes": [],
+    "publicDnsName": "",
+    "publicIpAddress": null,
+    "ramdiskId": null,
+    "state": {
+      "code": 16,
+      "name": "running"
+    },
+    "stateTransitionReason": "",
+    "subnetId": "subnet-052d8bf26a5f282d6",
+    "vpcId": "vpc-bbcedddd",
+    "architecture": "x86_64",
+    "blockDeviceMappings": [
+      {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+          "attachTime": 1634142130000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-07011ad5297fb9437"
+        }
+      }
+    ],
+    "clientToken": "",
+    "ebsOptimized": false,
+    "enaSupport": true,
+    "hypervisor": "xen",
+    "iamInstanceProfile": null,
+    "instanceLifecycle": null,
+    "elasticGpuAssociations": [],
+    "elasticInferenceAcceleratorAssociations": [],
+    "networkInterfaces": [
+      {
+        "association": null,
+        "attachment": {
+          "attachTime": 1634142130000,
+          "attachmentId": "eni-attach-0cc462845847dac0f",
+          "deleteOnTermination": true,
+          "deviceIndex": 0,
+          "status": "attached",
+          "networkCardIndex": 0
+        },
+        "description": "Primary network interface",
+        "groups": [
+          {
+            "groupName": "launch-wizard-7",
+            "groupId": "sg-08aacec442a8b15b1"
+          }
+        ],
+        "ipv6Addresses": [],
+        "macAddress": "06:23:6c:de:4d:ff",
+        "networkInterfaceId": "eni-0a681a08ac01b5fd0",
+        "ownerId": "577926974532",
+        "privateDnsName": "ip-172-31-48-54.eu-west-1.compute.internal",
+        "privateIpAddress": "172.31.48.54",
+        "privateIpAddresses": [
+          {
+            "association": null,
+            "primary": true,
+            "privateDnsName": "ip-172-31-48-54.eu-west-1.compute.internal",
+            "privateIpAddress": "172.31.48.54"
+          }
+        ],
+        "sourceDestCheck": true,
+        "status": "in-use",
+        "subnetId": "subnet-052d8bf26a5f282d6",
+        "vpcId": "vpc-bbcedddd",
+        "interfaceType": "interface",
+        "ipv4Prefixes": [],
+        "ipv6Prefixes": []
+      }
+    ],
+    "outpostArn": null,
+    "rootDeviceName": "/dev/xvda",
+    "rootDeviceType": "ebs",
+    "securityGroups": [
+      {
+        "groupName": "launch-wizard-7",
+        "groupId": "sg-08aacec442a8b15b1"
+      }
+    ],
+    "sourceDestCheck": true,
+    "spotInstanceRequestId": null,
+    "sriovNetSupport": null,
+    "stateReason": null,
+    "tags": [
+      {
+        "key": "Name",
+        "value": "testing-vpc-endpoint"
+      }
+    ],
+    "virtualizationType": "hvm",
+    "cpuOptions": {
+      "coreCount": 2,
+      "threadsPerCore": 1
+    },
+    "capacityReservationId": null,
+    "capacityReservationSpecification": {
+      "capacityReservationPreference": "open",
+      "capacityReservationTarget": null
+    },
+    "hibernationOptions": {
+      "configured": false
+    },
+    "licenses": [],
+    "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "optional",
+      "httpPutResponseHopLimit": 1,
+      "httpEndpoint": "enabled",
+      "httpProtocolIpv6": "disabled"
+    },
+    "enclaveOptions": {
+      "enabled": false
+    },
+    "bootMode": null,
+    "platformDetails": null,
+    "usageOperation": null,
+    "usageOperationUpdateTime": null
+  },
+  {
+    "amiLaunchIndex": 0,
+    "imageId": "ami-05cd35b907b4ffe77",
+    "instanceId": "i-091238fbe8d82be8c",
+    "instanceType": "t2.micro",
+    "kernelId": null,
+    "keyName": "rnd",
+    "launchTime": 1634742152000,
+    "monitoring": {
+      "state": "disabled"
+    },
+    "placement": {
+      "availabilityZone": "eu-west-1c",
+      "affinity": null,
+      "groupName": "",
+      "partitionNumber": null,
+      "hostId": null,
+      "tenancy": "default",
+      "spreadDomain": null,
+      "hostResourceGroupArn": null
+    },
+    "platform": null,
+    "privateDnsName": "ip-172-31-36-143.eu-west-1.compute.internal",
+    "privateIpAddress": "172.31.36.143",
+    "productCodes": [],
+    "publicDnsName": "ec2-54-228-140-9.eu-west-1.compute.amazonaws.com",
+    "publicIpAddress": "54.228.140.9",
+    "ramdiskId": null,
+    "state": {
+      "code": 16,
+      "name": "running"
+    },
+    "stateTransitionReason": "",
+    "subnetId": "subnet-43078919",
+    "vpcId": "vpc-bbcedddd",
+    "architecture": "x86_64",
+    "blockDeviceMappings": [
+      {
+        "deviceName": "/dev/xvda",
+        "ebs": {
+          "attachTime": 1634742153000,
+          "deleteOnTermination": true,
+          "status": "attached",
+          "volumeId": "vol-0b87703a2c48fce4b"
+        }
+      }
+    ],
+    "clientToken": "",
+    "ebsOptimized": false,
+    "enaSupport": true,
+    "hypervisor": "xen",
+    "iamInstanceProfile": null,
+    "instanceLifecycle": null,
+    "elasticGpuAssociations": [],
+    "elasticInferenceAcceleratorAssociations": [],
+    "networkInterfaces": [
+      {
+        "association": {
+          "carrierIp": null,
+          "ipOwnerId": "amazon",
+          "publicDnsName": "ec2-54-228-140-9.eu-west-1.compute.amazonaws.com",
+          "publicIp": "54.228.140.9"
+        },
+        "attachment": {
+          "attachTime": 1634742152000,
+          "attachmentId": "eni-attach-0e850d389733ecb30",
+          "deleteOnTermination": true,
+          "deviceIndex": 0,
+          "status": "attached",
+          "networkCardIndex": 0
+        },
+        "description": "Primary network interface",
+        "groups": [
+          {
+            "groupName": "launch-wizard-9",
+            "groupId": "sg-0f21b90132f1b3047"
+          }
+        ],
+        "ipv6Addresses": [],
+        "macAddress": "0a:20:70:58:71:3f",
+        "networkInterfaceId": "eni-0901dfb6bd3211246",
+        "ownerId": "577926974532",
+        "privateDnsName": "ip-172-31-36-143.eu-west-1.compute.internal",
+        "privateIpAddress": "172.31.36.143",
+        "privateIpAddresses": [
+          {
+            "association": {
+              "carrierIp": null,
+              "ipOwnerId": "amazon",
+              "publicDnsName": "ec2-54-228-140-9.eu-west-1.compute.amazonaws.com",
+              "publicIp": "54.228.140.9"
+            },
+            "primary": true,
+            "privateDnsName": "ip-172-31-36-143.eu-west-1.compute.internal",
+            "privateIpAddress": "172.31.36.143"
+          }
+        ],
+        "sourceDestCheck": true,
+        "status": "in-use",
+        "subnetId": "subnet-43078919",
+        "vpcId": "vpc-bbcedddd",
+        "interfaceType": "interface",
+        "ipv4Prefixes": [],
+        "ipv6Prefixes": []
+      }
+    ],
+    "outpostArn": null,
+    "rootDeviceName": "/dev/xvda",
+    "rootDeviceType": "ebs",
+    "securityGroups": [
+      {
+        "groupName": "launch-wizard-9",
+        "groupId": "sg-0f21b90132f1b3047"
+      }
+    ],
+    "sourceDestCheck": true,
+    "spotInstanceRequestId": null,
+    "sriovNetSupport": null,
+    "stateReason": null,
+    "tags": [
+      {
+        "key": "Name",
+        "value": "public-testing"
+      }
+    ],
+    "virtualizationType": "hvm",
+    "cpuOptions": {
+      "coreCount": 1,
+      "threadsPerCore": 1
+    },
+    "capacityReservationId": null,
+    "capacityReservationSpecification": {
+      "capacityReservationPreference": "open",
+      "capacityReservationTarget": null
+    },
+    "hibernationOptions": {
+      "configured": false
+    },
+    "licenses": [],
+    "metadataOptions": {
+      "state": "applied",
+      "httpTokens": "optional",
+      "httpPutResponseHopLimit": 1,
+      "httpEndpoint": "enabled",
+      "httpProtocolIpv6": "disabled"
+    },
+    "enclaveOptions": {
+      "enabled": false
+    },
+    "bootMode": null,
+    "platformDetails": null,
+    "usageOperation": null,
+    "usageOperationUpdateTime": null
+  }
+]
